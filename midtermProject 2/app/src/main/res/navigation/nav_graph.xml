@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="edu.iu.mbarrant.midtermproject.MainFragment"
+        android:label="activity_main"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainScreen_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainScreen_to_highScoresFragment"
+            app:destination="@id/highScoresFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:label="game_screen"
+        tools:layout="@layout/game_screen"
+        android:name="edu.iu.mbarrant.midtermproject.GameFragment">
+        <argument
+            android:name="taskId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_gameFragment_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/highScoresFragment"
+        android:label="fragment_high_scores"
+        tools:layout="@layout/highscore_screen"
+        android:name="edu.iu.mbarrant.midtermproject.HighScoreFragment">
+        <action
+            android:id="@+id/action_HighScore_Fragment_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+</navigation>
